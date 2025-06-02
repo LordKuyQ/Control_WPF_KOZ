@@ -1,27 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Control_WPF_KOZ.Models;
-
-public partial class Book
+namespace Control_WPF_KOZ.Models
 {
-    public string Id { get; set; } = null!;
+    public partial class Book
+    {
+        [Required(ErrorMessage = "ID книги обязателен.")]
+        public string Id { get; set; } = null!;
 
-    public string Name { get; set; } = null!;
+        [Required(ErrorMessage = "Название книги обязательно.")]
+        [StringLength(100, ErrorMessage = "Название книги не может быть длиннее 100 символов.")]
+        public string Name { get; set; } = null!;
 
-    public int GenreId { get; set; }
+        [Required(ErrorMessage = "ID жанра обязателен.")]
+        public int GenreId { get; set; }
 
-    public string Description { get; set; } = null!;
+        [Required(ErrorMessage = "Описание книги обязательно.")]
+        public string Description { get; set; } = null!;
 
-    public DateTime DateRelease { get; set; }
+        [Required(ErrorMessage = "Дата выпуска обязательна.")]
+        public DateTime DateRelease { get; set; }
 
-    public int StatusId { get; set; }
+        [Required(ErrorMessage = "ID статуса обязателен.")]
+        public int StatusId { get; set; }
 
-    public int? UserId { get; set; }
+        public int? UserId { get; set; }
 
-    public virtual Genre Genre { get; set; } = null!;
-
-    public virtual Status Status { get; set; } = null!;
-
-    public virtual User User { get; set; } = null!;
+        public virtual Genre Genre { get; set; } = null!;
+        public virtual Status Status { get; set; } = null!;
+        public virtual User User { get; set; } = null!;
+    }
 }

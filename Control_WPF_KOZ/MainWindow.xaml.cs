@@ -1,6 +1,7 @@
 ﻿using Control_WPF_KOZ.Auto;
 using Control_WPF_KOZ.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.Windows;
 
 namespace Control_WPF_KOZ
@@ -65,9 +66,21 @@ namespace Control_WPF_KOZ
             {
                 try
                 {
-                    _context.Books.Add(addBookWindow.NewBook!);
-                    _context.SaveChanges();
-                    LoadData();
+                    var validationContext = new ValidationContext(addBookWindow.NewBook);
+                    var validationResults = new List<ValidationResult>();
+                    bool isValid = Validator.TryValidateObject(addBookWindow.NewBook, validationContext, validationResults, true);
+
+                    if (isValid)
+                    {
+                        _context.Books.Add(addBookWindow.NewBook!);
+                        _context.SaveChanges();
+                        LoadData();
+                    }
+                    else
+                    {
+                        string errorMessage = string.Join(Environment.NewLine, validationResults.Select(r => r.ErrorMessage));
+                        MessageBox.Show($"Ошибка валидации: {errorMessage}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -75,6 +88,7 @@ namespace Control_WPF_KOZ
                 }
             }
         }
+
 
         private void button_del_user_Click(object sender, RoutedEventArgs e)
         {

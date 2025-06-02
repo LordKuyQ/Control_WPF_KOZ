@@ -12,7 +12,7 @@
             <Label Content="Логин"/>
         </StackPanel>
         <StackPanel Margin="15" Orientation="Horizontal">
-            <TextBox Name="BoxPass" MinWidth="120"/>
+            <TextBox Name="BoxPass" MinWidth="120" />
             <Label Content="Пароль"/>
         </StackPanel>
         <StackPanel Margin="15" Orientation="Horizontal" HorizontalAlignment="Center">

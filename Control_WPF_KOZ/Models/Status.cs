@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Control_WPF_KOZ.Models;
-
-public partial class Status
+namespace Control_WPF_KOZ.Models
 {
-    public int Id { get; set; }
+    public partial class Status
+    {
+        public int Id { get; set; }
 
-    public string Content { get; set; } = null!;
+        [Required(ErrorMessage = "Содержимое статуса обязательно.")]
+        public string Content { get; set; } = null!;
 
-    public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+        public virtual ICollection<Book> Books { get; set; } = new List<Book>();
+    }
 }

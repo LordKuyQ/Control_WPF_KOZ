@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Control_WPF_KOZ", "Control_WPF_KOZ\Control_WPF_KOZ.csproj", "{F800E3B3-1A03-4783-9592-11E4FA3229A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject_koz", "..\TestProject_koz\TestProject_koz\TestProject_koz.csproj", "{D61B5DE7-247B-46C2-8E2C-F9FD7983C3B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F800E3B3-1A03-4783-9592-11E4FA3229A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F800E3B3-1A03-4783-9592-11E4FA3229A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F800E3B3-1A03-4783-9592-11E4FA3229A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61B5DE7-247B-46C2-8E2C-F9FD7983C3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61B5DE7-247B-46C2-8E2C-F9FD7983C3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61B5DE7-247B-46C2-8E2C-F9FD7983C3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61B5DE7-247B-46C2-8E2C-F9FD7983C3B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

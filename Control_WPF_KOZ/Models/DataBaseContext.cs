@@ -23,7 +23,7 @@ public partial class DataBaseContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    public string connection_string = "Server=DBSRV\\PH2024;Database=учебная_NDA_test;Trusted_Connection=True;TrustServerCertificate=True;";
+    public string connection_string = "Server=DBSRV\\PH2024;Database=учебная_NDA_labs;Trusted_Connection=True;TrustServerCertificate=True;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer(connection_string);

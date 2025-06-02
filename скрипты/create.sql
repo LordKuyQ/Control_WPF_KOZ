@@ -1,16 +1,16 @@
 CREATE TABLE "book"(
     "id" VARCHAR(255) NOT NULL,
     "name" VARCHAR(255) NOT NULL,
-    "genre_id" BIGINT NOT NULL,
+    "genre_id" INT NOT NULL,
     "description" VARCHAR(255) NOT NULL,
     "date_release" DATE NOT NULL,
-    "status_id" BIGINT NOT NULL,
-    "user_id" BIGINT NOT NULL
+    "status_id" INT NOT NULL,
+    "user_id" INT 
 );
 ALTER TABLE
     "book" ADD CONSTRAINT "book_id_primary" PRIMARY KEY("id");
 CREATE TABLE "user"(
-    "id" BIGINT NOT NULL IDENTITY(1,1),
+    "id" INT NOT NULL IDENTITY(1,1),
     "login" VARCHAR(255) NOT NULL,
     "password" VARCHAR(255) NOT NULL,
     "date_reristr" DATE NOT NULL,
@@ -20,14 +20,14 @@ CREATE TABLE "user"(
 ALTER TABLE
     "user" ADD CONSTRAINT "user_id_primary" PRIMARY KEY("id");
 CREATE TABLE "genre"(
-    "id" BIGINT NOT NULL IDENTITY(1,1),
+    "id" INT NOT NULL IDENTITY(1,1),
     "name" VARCHAR(255) NOT NULL,
     "description" VARCHAR(255) NOT NULL
 );
 ALTER TABLE
     "genre" ADD CONSTRAINT "genre_id_primary" PRIMARY KEY("id");
 CREATE TABLE "status"(
-    "id" BIGINT NOT NULL IDENTITY(1,1),
+    "id" INT NOT NULL IDENTITY(1,1),
     "content" VARCHAR(255) NOT NULL
 );
 ALTER TABLE
